@@ -10,7 +10,7 @@ const SearchBar = ({ className }) => {
   const [ term, setTerm ] = React.useState('')
   return (
     <form 
-    className='flex items-center rounded-2xl px-4 py-3 ml-10 mr-5 flex-grow max-w-3xl bg-[#F7F8FF]'>
+    className='flex items-center rounded-2xl px-4 py-3 mr-5 flex-grow max-w-3xl bg-[#F7F8FF]'>
       <AiOutlineSearch 
       className='text-2xl hidden sm:inline-flex text-blue-500 cursor-pointer'
       />
