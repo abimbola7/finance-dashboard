@@ -39,11 +39,13 @@ const Transaction = () => {
                 transaction.map(item=>(
                   <Tr className='' border={"none"}>
                     <Td className='!p-3'>
-                      {
-                        item.name === "Taxi" ? <BsTaxiFrontFill color='#FF0000'/> :
-                        item.name === "Shopping" ? <GiShoppingBag color='#FF0000'/> :
-                        item.name === "Netflix" ? <RiNetflixFill color='#FF0000'/> : ""
-                      }
+                      <div className='p-3 rounded-lg bg-white w-fit hit'>
+                        {
+                          item.name === "Taxi" ? <BsTaxiFrontFill className='' color='#FF0000'/> :
+                          item.name === "Shopping" ? <GiShoppingBag color='#FF0000'/> :
+                          item.name === "Netflix" ? <RiNetflixFill color='#FF0000'/> : ""
+                        }
+                      </div>
                     </Td>
                     <Td className='!p-3'>
                       <h2 className='text-sm text-[#000013] font-semibold'>{ item.name }</h2>
