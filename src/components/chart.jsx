@@ -232,7 +232,7 @@ const Chartss = () => {
       },
   }
   return (
-    <div className='sm:p-4 bg-[#F7F8FF] rounded-2xl'>
+    <div className='p-4 bg-[#F7F8FF] rounded-2xl'>
       <div className='flex items-center justify-between flex-row'>
         <h2 className='font-semibold text-xl text-[#141434]'>
           Statistics

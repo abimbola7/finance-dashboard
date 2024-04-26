@@ -9,8 +9,8 @@ const Header = () => {
         <div className='flex flex-row w-1/2'>
           <SearchBar />
         </div>
-        <div className='flex flex-row w-1/2 justify-between'>
-          <ul className='flex flex-row items-center space-x-6 text-[#232345]'>
+        <div className='flex flex-row w-1/2 justify-end md:justify-between'>
+          <ul className='hidden md:flex flex-row items-center space-x-6 text-[#232345]'>
             {
               [
                 ["Feedback"], ["Contacts"], ["Help"]

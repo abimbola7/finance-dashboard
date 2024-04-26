@@ -53,7 +53,6 @@ const RadialChart = () => {
         radialBar : {
           dataLabels : {
             show : true,
-
             name: {
               show: false,
             },
@@ -105,6 +104,7 @@ const RadialChart = () => {
         ...state.options,
       }}
       series={state.series}
+      width={"100%"}
       height={200}
       type='radialBar'
       />

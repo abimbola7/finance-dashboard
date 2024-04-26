@@ -38,20 +38,20 @@ const Transaction = () => {
               {
                 transaction.map(item=>(
                   <Tr className='' border={"none"}>
-                    <Td className='!p-2'>
+                    <Td className='!p-3'>
                       {
                         item.name === "Taxi" ? <BsTaxiFrontFill color='#FF0000'/> :
                         item.name === "Shopping" ? <GiShoppingBag color='#FF0000'/> :
                         item.name === "Netflix" ? <RiNetflixFill color='#FF0000'/> : ""
                       }
                     </Td>
-                    <Td className='!p-2'>
+                    <Td className='!p-3'>
                       <h2 className='text-sm text-[#000013] font-semibold'>{ item.name }</h2>
                       <p className='text-xs text-[#A49EDB]'>{ item.date }</p>
                     </Td>
-                    <Td className='text-xs !p-2 text-[#000013]'>
-                      ${
-                        item.type === "debit" ? `-${item.amount.toFixed(2)}` : `${item.amount.toFixed(2)}`
+                    <Td className='text-xs !p-3 text-[#000013] font-medium'>
+                      {
+                        item.type === "debit" ? `-$${item.amount.toFixed(2)}` : `${item.amount.toFixed(2)}`
                       }
                     </Td>
                   </Tr>
@@ -60,22 +60,6 @@ const Transaction = () => {
             </Tbody>
           </Table>
         </TableContainer>
-        {/* {
-          transaction.map(item=>(
-            <div className='flex items-center border w-full'>
-              <div className='p-1'>
-
-              </div>
-              <div className='flex flex-col'>
-                <h2 className='text-veryDeepBlue text-lg'>{ item.name }</h2>
-                <p className='text-xs'>{item.date}</p>
-              </div>
-              {
-                item.type === "debit" ? `-${item.amount}` : `${item.amount}`
-              }
-            </div>
-          ))
-        } */}
       </div>
     </div>
   )
