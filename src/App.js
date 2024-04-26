@@ -63,7 +63,7 @@ function App() {
               />
             </div>
           </div>
-          <div className='w-full h-full flex flex-row gap-x-3 max-w-[95%] xl:max-w-[90%] mx-auto mt-8 pb-20 tab:pb-0'>
+          <div className='w-full h-full flex flex-row gap-x-3 max-w-[100%] md:max-w-[95%] xl:max-w-[90%] mx-auto mt-8 pb-20 tab:pb-0'>
             <div className={`px-4 space-y-10 ${
               windowSize.width <= 768 ? (
                 status === "stats" ? "w-full" : "hidden"
