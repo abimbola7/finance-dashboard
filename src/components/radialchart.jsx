@@ -95,7 +95,10 @@ const RadialChart = () => {
     }
   }
   return (
-    <div>
+    <div className="relative">
+      <div className="absolute right-0 md:-right-6 top-[15%] py-2 px-5 rounded-lg bg-[#3326AE] text-[#ffffff] font-medium shadow-2xl shadow-black z-[10]">
+        <p>${creditScore.toLocaleString()}</p>
+      </div>
       <div className='flex items-center justify-end'>
         <FiEdit3 size={16} color='#C4BDD5' className='cursor-pointer'/>
       </div>
