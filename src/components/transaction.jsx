@@ -57,7 +57,7 @@ const Transaction = () => {
       type : "debit",
       date : newDate.format('hh:MM A')
     }
-    setTransaction(prevTransactions => [...prevTransactions, newTransaction])
+    setTransaction(prevTransactions => [newTransaction, ...prevTransactions])
   }
   
 
@@ -84,7 +84,7 @@ const Transaction = () => {
               <FormControl>
                 <FormLabel>Transaction</FormLabel>
                 <Select 
-                placeholder='Select option'
+                placeholder='Select Bill'
                 onChange={(e)=>setTransactionType(e.target.value)}
                 >
                   <option value='Taxi'>Taxi</option>
