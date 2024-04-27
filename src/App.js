@@ -40,12 +40,17 @@ function App() {
 
   return (
     <ChakraProvider>
-      <div className='w-full min-h-screen h-full bg-[#3326AE] flex flex-row transition-all duration-500'>
+      <div className={`w-full min-h-screen h-full bg-[#3326AE] flex flex-row`}>
         <SideBar />
-        <div className='w-full min-h-screen bg-[#ffffff] tab:rounded-tl-[3rem] tab:rounded-bl-[3rem] overflow-hidden transition-all duration-500'>
-          <Header />
-          <div className="flex md:hidden flex-row space-x-3 justify-center">
-            <p>{ windowSize.width }</p>
+        <div className={`w-full min-h-screen tab:rounded-tl-[3rem] tab:rounded-bl-[3rem] overflow-hidden ${
+              windowSize.width <= 768 ? (
+                status === "stats" ? "bg-white" : "bg-[#F7F8FF]") : "bg-[#ffffff]"}`}>
+          <Header/>
+          <div 
+          className={`py-4 flex md:hidden flex-row space-x-3 justify-center ${
+              windowSize.width <= 768 && (
+                status === "stats" ? "bg-white" : "bg-[#F7F8FF]"
+              )}`}>
             <div
             onClick={()=>setStatus("stats")}
             className="cursor-pointer">
@@ -63,7 +68,7 @@ function App() {
               />
             </div>
           </div>
-          <div className='w-full h-full flex flex-row gap-x-3 max-w-[100%] md:max-w-[95%] xl:max-w-[90%] mx-auto mt-8 pb-20 tab:pb-0'>
+          <div className='w-full h-full flex flex-row gap-x-3 max-w-[100%] md:max-w-[95%] xl:max-w-[90%] mx-auto md:mt-8 pb-20 tab:pb-0'>
             <div className={`px-4 space-y-10 ${
               windowSize.width <= 768 ? (
                 status === "stats" ? "w-full" : "hidden"

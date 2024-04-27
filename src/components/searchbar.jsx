@@ -10,9 +10,9 @@ const SearchBar = ({ className }) => {
   const [ term, setTerm ] = React.useState('')
   return (
     <form 
-    className='flex items-center rounded-2xl px-4 py-3 mr-5 flex-grow max-w-3xl bg-[#F7F8FF]'>
+    className='flex items-center rounded-2xl px-4 py-3 mr-5 flex-grow max-w-3xl bg-[#F7F8FF] border border-gray-300'>
       <AiOutlineSearch 
-      className='text-2xl hidden sm:inline-flex text-blue-500 cursor-pointer'
+      className='text-xl sm:text-2xl inline-flex text-blue-500 cursor-pointer'
       />
       <input
       onChange={(e)=>setTerm(e.target.value)}

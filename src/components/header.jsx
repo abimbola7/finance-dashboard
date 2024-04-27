@@ -2,14 +2,17 @@ import React from 'react'
 import SearchBar from './searchbar'
 import { IoIosNotifications } from "react-icons/io";
 
-const Header = () => {
+const Header = ({ className }) => {
   return (
     <header className={`w-full flex items-center px-1 sticky top-0 z-[50] overflow-hidden`}>
-      <nav className="flex items-center justify-between mx-auto pt-10 pb-4 px-4 max-w-[90%] w-full flex-row flex-nowrap">
-        <div className='flex flex-row w-1/2'>
+      <nav className={`flex items-center justify-between mx-auto pt-10 pb-4 px-4 max-w-[90%] w-full flex-row flex-nowrap`}>
+        <div className='mr-5 tab:hidden'>
+          <img src="/assets/icon3.svg" alt='icon' className=''/>
+        </div>
+        <div className='flex flex-row flex-1 tab:flex-none tab:w-1/2'>
           <SearchBar />
         </div>
-        <div className='flex flex-row w-1/2 justify-end md:justify-between'>
+        <div className='flex flex-row tab:w-1/2 justify-end md:justify-between'>
           <ul className='hidden md:flex flex-row items-center space-x-6 text-[#232345]'>
             {
               [

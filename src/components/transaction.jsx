@@ -5,6 +5,7 @@ import { GiShoppingBag } from "react-icons/gi";
 import { BsTaxiFrontFill } from "react-icons/bs";
 import moment from 'moment';
 import { Select } from '@chakra-ui/react'
+import { MdArrowForwardIos } from "react-icons/md";
 
 import {
   Modal,
@@ -35,6 +36,7 @@ import {
 
 const Transaction = () => {
   const [date,setDate] = React.useState(moment());
+  const [ hide, setHide ] = React.useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure()
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
@@ -49,18 +51,15 @@ const Transaction = () => {
   
   const addTransaction = (transaction) => {
     const newDate = moment(date).add(1, 'day');
-    console.log(newDate.format('hh:MM A'))
     const newTransaction  = {
       name : transactionType,
       amount : parseFloat(amount),
       type : "debit",
       date : newDate.format('hh:MM A')
     }
-    // console.log(trans)
     setTransaction(prevTransactions => [...prevTransactions, newTransaction])
   }
   
-  console.log(transaction)
 
   return (
     <div className='flex flex-col gap-y-5 mt-5'>
@@ -69,7 +68,7 @@ const Transaction = () => {
         {/* <button className='p-2 bg-[#FF392B] rounded-xl focus:outline-none'>
         </button> */}
         <Button onClick={onOpen} backgroundColor={"#FF392B"} _hover={{ bg: '#ff392b' }}>
-          <BsPlus size={16}  className='text-white fill-white'/>
+          <BsPlus size={20}  className='text-white fill-white'/>
         </Button>
         <Modal
           initialFocusRef={initialRef}
@@ -105,7 +104,7 @@ const Transaction = () => {
             </ModalBody>
 
             <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={()=>setTimeout(()=>{addTransaction({ transactionType, amount }); onClose()},1000)}>
+              <Button backgroundColor={"#3326AE"} color={"#ffffff"} mr={3} onClick={()=>setTimeout(()=>{addTransaction({ transactionType, amount }); onClose()},1000)}>
                 Pay
               </Button>
               <Button onClick={onClose}>Cancel</Button>
@@ -118,7 +117,7 @@ const Transaction = () => {
           <Table variant='simple'>
             <Tbody className='space-y-3' border={"none"}>
               {
-                transaction.map(item=>(
+                transaction && transaction.slice(0, hide ? transaction.length : 4).map(item=>(
                   <Tr className='' border={"none"}>
                     <Td className='!p-3'>
                       <div className='p-3 rounded-lg bg-white w-fit hit'>
@@ -143,6 +142,18 @@ const Transaction = () => {
               }
             </Tbody>
           </Table>
+          <div className='flex w-full mt-4 relative justify-end px-3'>
+            <button 
+            onClick={()=>setHide(prev => !prev)}
+            className='flex items-center group'>
+              <span className='font-medium'>
+                {
+                  hide ? "Hide" : "See all Transactions"
+                }
+              </span>
+              <MdArrowForwardIos size={16} color='#FF0000' className='ml-2 group-hover:translate-x-1 transition-transform duration-200'/>
+            </button>
+          </div>
         </TableContainer>
       </div>
     </div>
