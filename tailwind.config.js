@@ -7,7 +7,8 @@ module.exports = {
     screens: {
       "sm" : "640px",
       "md" : "768px",
-      "tab" : "900px"
+      "tab" : "900px",
+      "2xl" : "1536px"
     },
     extend: {
       colors : {

@@ -77,14 +77,14 @@ function App() {
                 </div>
           </div>
           <div className='w-full h-full flex flex-row gap-x-3 max-w-[100%] md:max-w-[95%] xl:max-w-[90%] mx-auto md:mt-8 pb-20 tab:pb-0'>
-            <div className={`px-4 space-y-10 ${changeColor("w-3/4", "stats")}
+            <div className={`px-4 space-y-10 2xl:w-[60%] ${changeColor("w-3/4", "stats")}
             }`}>
               <FirstSection />
               <Chartss />
               <BottomSection />
 
             </div>
-            <div className={`w-1/4 bg-[#F7F8FF] rounded-2xl px-4 py-10 space-y-12 ${changeColor("w-1/4", "card")}`}>
+            <div className={`w-1/4 bg-[#F7F8FF] rounded-2xl px-4 py-10 space-y-12 2xl:w-[40%] ${changeColor("w-1/4", "card")}`}>
               <RadialChart />
               <DebCard />
               <Transaction />
