@@ -18,16 +18,16 @@ const Header = ({ className }) => {
               [
                 ["Feedback"], ["Contacts"], ["Help"]
               ].map(([item])=>(
-                <li className='font-medium text-md'>{item}</li>
+                <li className='font-medium text-md cursor-pointer'>{item}</li>
               ))
             }
           </ul>
           <div className='flex flex-row space-x-5 items-center'>
-            <div className='relative'>
+            <div className='relative cursor-pointer'>
               <div className='absolute right-[.4rem] top-1 w-1 h-1 bg-red-500 rounded-full'/>
               <IoIosNotifications size={20} color='#BBBED9' />
             </div>
-            <div className='w-8 h-8 overflow-hidden rounded-xl'>
+            <div className='w-8 h-8 overflow-hidden rounded-xl cursor-pointer'>
               <img src="/avatar.webp" alt="" className='w- h-8 scale-125'/>
             </div>
           </div>

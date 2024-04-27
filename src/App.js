@@ -60,7 +60,7 @@ function App() {
                 <div className='flex flex-row space-x-10 items-center bg-white px-4 py-2 shadow-2xl rounded-xl'>
                   <div
                   onClick={()=>setStatus("stats")}
-                  className={`cursor-pointer relative z-[10] w-full ${status === "stats" && 'before:absolute before:w-full before:h-full before:bg-[#00C3F8] before:rounded-md before:px-5 before:py-3 before:-left-2 before:-z-[10] text-white'}`}>
+                  className={`cursor-pointer relative z-[10] w-full ${status === "stats" && 'before:absolute before:w-full before:h-full before:bg-[#00C3F8] before:rounded-lg before:px-5 before:py-3.5 before:-top-0.5 before:-left-2 before:-z-[10] text-white'}`}>
                     <LuBarChart 
                     size={20} 
                     // color='black' 
@@ -68,7 +68,7 @@ function App() {
                   </div>
                   <div
                   onClick={()=>setStatus("card")} 
-                  className={`cursor-pointer relative z-[10] ${status === "card" && 'before:absolute before:w-full before:h-full before:bg-[#00C3F8] before:rounded-md before:px-5 before:py-3 before:-left-2 before:-z-[10] text-white'}`}>
+                  className={`cursor-pointer relative z-[10] ${status === "card" && 'before:absolute before:w-full before:h-full before:bg-[#00C3F8] before:rounded-lg before:px-5 before:py-3.5 before:-top-0.5 before:-left-2 before:-z-[10] text-white'}`}>
                     <CiCreditCard1 
                     size={20} 
                     // color='' 
